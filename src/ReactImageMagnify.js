@@ -145,11 +145,24 @@ class ReactImageMagnify extends React.Component {
         });
     }
 
+    getContainedSize(img) {
+        const ratio = img.naturalWidth / img.naturalHeight
+        let width = img.height * ratio
+        let height = img.height
+
+        if (width > img.width) {
+            width = img.width
+            height = img.width / ratio
+        }
+
+        return [width, height]
+    }
+
     setSmallImageDimensionState() {
-        const {
-            offsetWidth: smallImageWidth,
-            offsetHeight: smallImageHeight
-        } = this.smallImageEl;
+        const [
+            smallImageWidth,
+            smallImageHeight
+        ] = this.getContainedSize(this.smallImageEl);
 
         this.setState({
             smallImageWidth,
