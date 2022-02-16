@@ -350,7 +350,8 @@ class ReactImageMagnify extends React.Component {
                     style: getSmallImageStyle(smallImage, imageStyle),
                     ref: (el) => this.smallImageEl = el,
                     onLoad: this.onSmallImageLoad,
-                    onError
+                    onError,
+                    loading: 'lazy'
                 }} />
                 {isHintEnabled &&
                     <DisplayUntilActive {...{
