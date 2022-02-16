@@ -490,8 +490,10 @@ describe('React Image Magnify', () => {
                     });
                     const instance = shallowWrapper.instance();
                     instance.smallImageEl = {
-                        offsetWidth: 10,
-                        offsetHeight: 20
+                        naturalWidth: 10,
+                        naturalHeight: 20,
+                        width: 10,
+                        height: 20,
                     }
 
                     instance.componentDidMount();
@@ -546,8 +548,10 @@ describe('React Image Magnify', () => {
                     });
                     const instance = mountedWrapper.instance();
                     instance.smallImageEl = {
-                        offsetWidth: 50,
-                        offsetHeight: 51
+                        naturalWidth: 50,
+                        naturalHeight: 51,
+                        width: 50,
+                        height: 51,
                     };
 
                     simulateWindowResize();
